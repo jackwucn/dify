@@ -292,6 +292,13 @@ services:
 
   # The nginx reverse proxy.
   # used for reverse proxying the API service and Web service.
+  nextweb:
+    image: yidadaa/chatgpt-next-web:latest
+    environment:
+      OPENAI_API_KEY: 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
+      CODE: Firewall1
+      BASE_URL: https://a.nextweb.fun/api/proxy
+     
   nginx:
     image: nginx:latest
     volumes:
@@ -303,3 +310,4 @@ services:
       - web
     ports:
       - "80:80"
+      - "443:443"
